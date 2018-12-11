@@ -19,6 +19,7 @@ var swiper = (function() {
         this.$index_li[i].index = i;
         //console.log(this.$index_li[i].index)
       }
+      //增加两张图片放置在前后实现无限轮播
       var $first = this.$imag.firstElementChild;
       var $last = this.$imag.lastElementChild.cloneNode(true);
       this.$imag.insertBefore($last, $first);
@@ -67,7 +68,7 @@ var swiper = (function() {
         document.onmousemove = "";
       };
     },
-    
+    //显示图片,
     showImage: function(index) {
       index = index || 0;
       if (index > 4) {
@@ -78,7 +79,7 @@ var swiper = (function() {
         this.$imag.style.left = 5 * 600 + "px";
       }
       this.index = index;
-
+      
       for (var i = 0; i < this.$index_li.length; i++) {
         this.$index_li[i].className = "";
       }
